@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hyeonji Julia Lee</title>
+    <meta name="description" content="Hyeonji Julia (Julia) Lee — Computer Science at WSU. Research interests: Human Information Behavior, AI in Information Literacy Education, IR Systems, User-Centered Systems and Services." />
+    <link rel="icon" href="assets/img/leo.ico" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Hyeonji Julia Lee" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/profile.jpg" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkfK5cZ3VIAtXhF7C1jpwQ8U5uH8G6kKZJXQ0QfX2XqfK7n0Z8V+QJ8Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --brand: #6c63ff;
+            --brand-ink: #1f1f29;
+            --muted: #6b7280;
+            --bg: #ffffff;
+            --chip: #eef2ff;
+            --chip-text: #3730a3;
+            --border: #e5e7eb;
+        }
+
+        [data-bs-theme="dark"]:root {
+            --brand: #7c89ff;
+            --brand-ink: #e5e7eb;
+            --muted: #c5c9d3;
+            --bg: #0b0c10;
+            --chip: #1b1e3b;
+            --chip-text: #c7d2fe;
+            --border: #1f2937;
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+            color: var(--muted);
+            background: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--brand-ink)
+        }
+
+        .site-wrap {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100%
+        }
+
+        @media (max-width:991px) {
+            .site-wrap {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 0;
+            align-self: start;
+            height: 100dvh;
+            padding: 3rem 2rem;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: linear-gradient(180deg,var(--bg),rgba(0,0,0,0));
+        }
+
+        @media (max-width:991px) {
+            .sidebar {
+                position: relative;
+                height: auto;
+                padding: 1.25rem 1rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
+        .avatar {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 24px rgba(0,0,0,.08)
+        }
+
+        .name {
+            font-family: "Playfair Display",serif;
+            font-weight: 700;
+            font-size: 1.75rem
+        }
+
+        .nav-pills .nav-link {
+            color: var(--muted);
+            border-radius: 999px
+        }
+
+            .nav-pills .nav-link.active {
+                background: var(--brand);
+                color: #fff
+            }
+
+        .nav-icon {
+            width: 1.25rem;
+            display: inline-block
+        }
+
+        /* Content */
+        main {
+            padding: 3rem 5vw;
+            max-width: 1100px
+        }
+
+        section {
+            padding: 3rem 0;
+            scroll-margin-top: 120px
+        }
+
+        .lead {
+            font-size: 1.05rem;
+            line-height: 1.7
+        }
+
+        /* Cards */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 1rem
+        }
+
+            .card .card-title {
+                margin-bottom: .25rem
+            }
+
+        .meta {
+            color: var(--muted);
+            font-size: .95rem
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-left: .5rem
+        }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                top: .25rem;
+                bottom: .25rem;
+                left: 10px;
+                width: 2px;
+                background: var(--border)
+            }
+
+        .t-item {
+            position: relative;
+            padding-left: 2.25rem;
+            margin-bottom: 1.5rem
+        }
+
+            .t-item::before {
+                content: "";
+                position: absolute;
+                width: .75rem;
+                height: .75rem;
+                left: 6.5px;
+                top: .4rem;
+                border-radius: 50%;
+                background: var(--brand)
+            }
+
+        /* Utilities */
+        .btn-brand {
+            background: var(--brand);
+            color: #fff
+        }
+
+            .btn-brand:hover {
+                opacity: .95;
+                color: #fff
+            }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 2rem 0
+        }
+
+        /* Back to top */
+        #toTop {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: none
+        }
+
+        /* Print */
+        @media print {
+            .sidebar {
+                display: none
+            }
+
+            main {
+                padding: 0
+            }
+
+            #toTop, .theme-toggle {
+                display: none
+            }
+
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: .9em
+            }
+        }
+
+        /* Research Interests */
+        .section-lead {
+            max-width: 65ch
+        }
+
+        .ri-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-bottom: .8rem
+        }
+
+        .ri-chip {
+            background: var(--chip);
+            color: var(--chip-text);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: .55rem .95rem;
+            font-weight: 700;
+            font-size: .92rem;
+            cursor: pointer;
+            transition: transform .12s ease, background-color .12s ease, color .12s ease, border-color .12s ease;
+            user-select: none;
+        }
+
+            .ri-chip:hover, .ri-chip:focus-visible {
+                transform: translateY(-1px);
+                outline: none
+            }
+
+            .ri-chip.active {
+                background: var(--brand);
+                color: #fff;
+                border-color: transparent
+            }
+
+        .ri-panel {
+            padding: 1.25rem 1.25rem 1.1rem;
+            background: linear-gradient(180deg,rgba(108,99,255,.08),rgba(108,99,255,0));
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            min-height: 420px;
+        }
+
+            .ri-panel h3 {
+                color: var(--brand-ink);
+                margin-bottom: .35rem
+            }
+
+            .ri-panel p {
+                margin-bottom: .9rem
+            }
+
+        .ri-subtle {
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            font-size: .78rem;
+            color: var(--muted);
+            font-weight: 800;
+            margin-bottom: .35rem
+        }
+
+        .ri-columns {
+            display: grid;
+            gap: 1rem
+        }
+
+        @media (min-width:768px) {
+            .ri-columns {
+                grid-template-columns: 1.6fr 1fr
+            }
+        }
+
+        .kchips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .45rem
+        }
+
+            .kchips .micro-pill {
+                background: var(--chip);
+                color: var(--chip-text);
+                border-radius: 999px;
+                padding: .25rem .55rem;
+                font-weight: 700;
+                font-size: .78rem;
+            }
+
+        [data-bs-theme="dark"] .ri-chip {
+            background: #15172b;
+            border-color: var(--border)
+        }
+
+        [data-bs-theme="dark"] .ri-panel {
+            background: linear-gradient(180deg,rgba(124,137,255,.12),rgba(124,137,255,0))
+        }
+    </style>
+</head>
+<body>
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2" href="#about">Skip to content</a>
+
+    <div class="site-wrap">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="text-center">
+                <img class="avatar d-block mx-auto" src="assets/img/profile.jpg" alt="Portrait of Hyeonji Julia Lee" loading="lazy" />
+                <div class="name mt-2 text-center">Hyeonji Julia Lee</div>
+            </div>
+
+            <nav class="d-flex flex-column gap-2 mt-2">
+                <a class="text-decoration-none" href="mailto:hyeonjijulialee@gmail.com"><i class="fa-solid fa-envelope me-2"></i>hyeonjijulialee[at]gmail[dot]com</a>
+                <a class="text-decoration-none" href="https://www.linkedin.com/in/hyeonji-julia-lee/"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+                <a class="text-decoration-none" href="https://github.com/hyeonjijulialee"><i class="fa-brands fa-github me-2"></i>GitHub</a>
+            </nav>
+
+            <div class="divider"></div>
+
+            <ul id="sidenav" class="nav nav-pills flex-column gap-1">
+                <li class="nav-item"><a class="nav-link active" href="#about"><span class="nav-icon"><i class="fa-regular fa-user"></i></span> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#interests"><span class="nav-icon"><i class="fa-regular fa-star"></i></span> Research Interests</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications"><span class="nav-icon"><i class="fa-regular fa-file-lines"></i></span> Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#conferences"><span class="nav-icon"><i class="fa-regular fa-comments"></i></span> Conferences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects"><span class="nav-icon"><i class="fa-regular fa-folder-open"></i></span> Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience"><span class="nav-icon"><i class="fa-regular fa-rectangle-list"></i></span> Experiences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#leadership"><span class="nav-icon"><i class="fa-regular fa-handshake"></i></span> Leadership &amp; Service</a></li>
+                <li class="nav-item"><a class="nav-link" href="assets/pdf/hyeonji_julia_lee_CV.pdf" download><span class="nav-icon"><i class="fa-regular fa-file-pdf"></i></span> CV</a></li>
+            </ul>
+
+            <div class="mt-auto d-flex align-items-center gap-2">
+                <button id="themeToggle" class="btn btn-sm btn-outline-secondary theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <small class="ms-2 muted">Last updated <span id="updated"></span></small>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main>
+            <!-- About -->
+            <section id="about" aria-labelledby="about-title">
+                <h1 id="about-title" class="mb-3">Hello!</h1>
+                <p class="lead">
+                    I am <strong>Hyeonji (usually go by Julia) Lee</strong>, an undergraduate student majoring in Computer Science at Washington State University. I am applying to graduate programs in Information Schools (iSchools) for Fall 2026.
+                </p>
+                <p class="lead">
+                    I believe that the volume, accuracy, accessibility, and practicality of information are closely tied to individual autonomy and quality of life. However, socioeconomic inequality, technology accessibility gaps, and differences in information literacy continue to create significant disparities.
+                </p>
+                <p class="lead">
+                    My goal is to design systems and educational approaches that enable people to access information equitably, interpret it effectively, and apply it meaningfully in their daily lives. Through this work, I hope to reduce information disparities and ultimately improve people’s quality of life.
+                </p>
+                <p class="lead">
+                    Through my PhD studies, I seek to advance the field of information science through rigorous research and education, developing innovative solutions that can bring substantial and positive changes to society.
+                </p>
+                <p class="lead">
+                    Thanks again for visiting! If you have any questions, feel free to reach out through the contact information on the side.
+                </p>
+            </section>
+
+            <!-- Research Interests -->
+            <section id="interests" aria-labelledby="interests-title">
+                <h2 id="interests-title" class="mb-2">Research Interests</h2>
+                <p class="section-lead muted mb-3">
+                    I explore how people access, interpret, and utilize information, with the goal of designing equitable and user-centered systems and educational approaches.
+                </p>
+
+                <!-- tabs (chips) -->
+                <div class="ri-tabs" role="tablist" aria-label="Research interest tabs">
+                    <button type="button" class="ri-chip active" role="tab" aria-selected="true" data-key="hib">Human Information Behavior</button>
+                    <button type="button" class="ri-chip" role="tab" aria-selected="false" data-key="aile">AI in Information Literacy Education</button>
+                    <button type="button" class="ri-chip" role="tab" aria-selected="false" data-key="ir">Information Retrieval Systems</button>
+                    <button type="button" class="ri-chip" role="tab" aria-selected="false" data-key="ucss">User-Centered Systems &amp; Services</button>
+                </div>
+
+                <!-- single, wide detail panel -->
+                <article id="ri-panel" class="ri-panel card" aria-live="polite"></article>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Publications -->
+            <section id="publications" aria-labelledby="pubs-title">
+                <h2 id="pubs-title" class="mb-3">Publications</h2>
+                <h3 class="h6 mt-4 text-uppercase">In preparation</h3>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Conferences & Presentations -->
+            <section id="conferences" aria-labelledby="conferences-title">
+                <h2 id="conferences-title" class="mb-3">Conferences & Presentations</h2>
+                <ul class="list-unstyled m-0">
+                    <li class="mb-3">
+                        <div class="card p-3">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h3 class="h5 card-title">Designing 3D Assessments with Generative AI: A Hands-On Workshop for Elementary and Middle School Educators.</h3>
+                                    <div class="meta">Li, T., Krajcik. J., Akgun, S., Midde, L., <strong>Lee, H. J.</strong>, &amp; Wang, Z.</div>
+                                    <p class="mb-0">A Full day workshop accepted by 2025 National Science Teacher Association (NSTA) professional learning institute (PLI). Minneapolis, MN.</p>
+                                </div>
+                                <span class="badge text-bg-light">2025</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="card p-3">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h3 class="h5 card-title">Designing 3D Assessments with Generative AI: A Hands-On Workshop for Elementary and Middle School Educators.</h3>
+                                    <div class="meta">He, P., Li, T., Midde, L., <strong>Lee, H. J.</strong>, &amp; Wang, Z.</div>
+                                    <p class="mb-0">A 4-hour workshop accepted by 2025 Washington Science Teacher Association (WSTA). Tacoma, WA.</p>
+                                </div>
+                                <span class="badge text-bg-light">2025</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <div class="card p-3">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h3 class="h5 card-title">Korean and Japanese Student Flows to the U.S. and International Research Collaboration Patterns.</h3>
+                                    <div class="meta"><strong>Lee, H. J.</strong>, &amp; Jung, Y.</div>
+                                    <p class="mb-0"> Paper and oral presentation to be delivered at the 51st International Conference of the Japanese Modern Association of Korea (JMAK), Kinki University, Osaka, Japan.</p>
+                                </div>
+                                <span class="badge text-bg-light">2025</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="h6 mt-4 text-uppercase">Under review</h3>
+                <ul class="list-unstyled m-0">
+                    <li class="mb-3">
+                        <div class="card p-3">
+                            <h3 class="h6 card-title mb-1">Toward Development: From Customizing Classroom Assessments with ADAPT-AI to Further Supporting 3D Learning Progression.</h3>
+                            <div class="meta">Midde, L., <strong>Lee, H. J.</strong>, Wang, Z., &amp; Li, T.</div>
+                            <p class="mb-0">Paper submitted to the 2026 annual conference of National Association of Research in Science Teaching (NARST), Seattle, WA.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card p-3">
+                            <h3 class="h6 card-title mb-1">Using large language model to analyze chemistry undergraduate students' self-constructed concept maps.</h3>
+                            <div class="meta">Jin, G., Li, T., <strong>Lee, H. J.</strong>, Xue, Y., He, P., Adesope, O. O., Dydasco, C. G., Sunday, O. J., &amp; Nishida, K.</div>
+                            <p class="mb-0">Proposal submitted to the 2026 annual meeting of the American Educational Research Association (AERA), Los Angeles, CA.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Projects -->
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title" class="mb-3">Projects</h2>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                                <h3 class="h5 card-title m-0">[2] Microsoft AI for Good: Adaptive Assessment System</h3>
+                                <span class="badge text-bg-light">August 2025 — Present</span>
+                            </div>
+                            <div class="meta mb-2">Assistant Professor Tingting Li, Washington State University</div>
+                            <p class="mb-2">Part of a Microsoft-funded AI for Good initiative supporting rural K–12 science teachers in developing NGSS-aligned, multi-agent assessment science curricula. </p>
+                            <ul class="mb-2">
+                                <li>
+                                    Responsibilities include designing the system architecture, planning backend and data integration, and preparing for prototype implementation on Microsoft Azure for an AI-powered adaptive assessment platform.
+                                </li>
+                            </ul>
+                            <a class="text-decoration-underline" href="https://ceshs.wsu.edu/2025/05/19/aiforgood-ting/">Learn more</a>
+                            <br />
+                            <ul class="mb-2 meta" style="list-style:none; padding-left:0;">
+                                <li><span>*</span>Li, T. (PI) &amp; He, P. (Co-PI). (2025-2027). Leverage Multidisciplinary Human-AI Collaboration to Design an Adaptive Assessment System aligning with NGSS. Microsoft AI for Good, $50,000.</li>
+                                <li><span>*</span>Li, T. (PI). (2025-2027). Designing An LLM-Based Multi-Agent System for Customized Science Assessments Through Multidisciplinary Human-AI Collaboration, National Academy of Education/Spencer Postdoctoral Fellowship, $70,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                                <h3 class="h5 card-title m-0">[1] National R&amp;D: Meetings, Incentives, Conferences and Exhibitions</h3>
+                                <span class="badge text-bg-light">May 2022 — June 2023</span>
+                            </div>
+                            <div class="meta mb-2">PCN, Seoul, Republic of Korea</div>
+                            <p class="mb-2">
+                                “Post-COVID MICE Industry Revitalization: Development of an Integrated Online–Offline Exhibition and Convention Support Service Platform” initiative funded by the Ministry of Trade, Industry and Energy.
+                            </p>
+                            <ul class="mb-2">
+                                <li>Project planning and development of the page, a comprehensive industry information management system implemented using Java and MySQL.</li>
+                                <li>Through open-source technologies analysis, database design, and system restructuring, developed the page to enable administrators to create and manage metaverse spaces with Java and PostgreSQL.</li>
+                            </ul>
+                            <a class="text-decoration-underline" href="https://www.etnews.com/20231107000213" target="_blank" rel="noopener noreferrer">Learn more</a>
+                            <br />
+                            <ul class="mb-2 meta" style="list-style:none; padding-left:0;">
+                                <li>
+                                    <span>*</span>2022 |
+                                    <a href="https://www.ntis.go.kr/ThSearchTotalList.do?sort=&ntisYn=&searchWord=1415181539&originalSearchWord=&originalSearchGubun=" target="_blank" rel="noopener noreferrer">
+                                        Project Number: 1415181539
+                                    </a>
+                                    | Total R&amp;D Budget: 737M KRW (≈ 546K USD)
+                                </li>
+                                <li>
+                                    <span>*</span>2023 |
+                                    <a href="https://www.ntis.go.kr/ThSearchTotalList.do?searchCategory=total&encodingSearchWord=1415181539&oldSearchWord=1415181539&encodingOldSearchWord=1415181539&resultSearchValue=&fileSearchYn=&sort=RANK%2FDESC&ntisYn=&dbt=&init=&cordisKakenYn=&is01=&originalSearchWord=1415181539&originalSearchGubun=&technologyClassification=&directorySearchYear=&directorySearchOption1=&directorySearchOption2=&directorySearchOption3=&searchWord=1415185737" target="_blank" rel="noopener noreferrer">
+                                        Project Number: 1415185737
+                                    </a>
+                                    | Total R&amp;D Budget: 1.40B KRW (≈ 1.03M USD)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Experience -->
+            <section id="experience" aria-labelledby="exp-title">
+                <h2 id="exp-title" class="mb-3">Professional Experiences</h2>
+                <div class="timeline">
+                    <div class="t-item">
+                        <h3 class="h5 mb-1">Archival Digitization Assistant<span class="ms-2 badge text-bg-light">March 2025 — Present</span></h3>
+                        <div class="meta">Manuscripts, Archives &amp; Special Collections, Washington State University</div>
+                        <ul class="mb-0">
+                            <li>As part of the Kimble Project, which focuses on Northwest and state history, I digitize and catalog newspaper clippings from the 1910s to 1930s by creating metadata to support the preservation and accessibility of regional records.</li>
+                            <li>I also assist at the MASC front desk, supporting researchers and connecting them with the appropriate specialized librarian.</li>
+                        </ul>
+                    </div>
+                    <div class="t-item">
+                        <h3 class="h5 mb-1">Research Assistant to Professor Tingting Li<span class="ms-2 badge text-bg-light">October 2024 — Present</span></h3>
+                        <div class="meta">Assistant Professor of Science Education, Washington State University</div>
+                        <ul class="mb-0">
+                            <li>Research focuses on leveraging AI to help teachers deliver high-quality, personalized instruction tailored to each student's background.</li>
+                            <li>Developed a pipeline that automatically evaluates student-created concept maps using the OpenAI API, comparing results with human scoring through rubric-based concept and relation extraction, image preprocessing, voting-based aggregation, and performance evaluation.</li>
+                            <li>Currently developing an NGSS-aligned, multi-agent assessment platform as part of a Microsoft AI for Good project to support K–12 science teachers.</li>
+                        </ul>
+                    </div>
+                    <div class="t-item">
+                        <h3 class="h5 mb-1">Backend Developer <span class="ms-2 badge text-bg-light">May 2022 — Jun 2023</span></h3>
+                        <div class="meta">PCN, Seoul, Republic of Korea</div>
+                        <ul class="mb-0">
+                            <li>National R&amp;D Projects: Meetings, Incentives, Conferences and Exhibitions</li>
+                            <li>Skills: Java, MySQL, PostgreSQL, Databases, Data Analysis, Problem Solving, Project Management, Communication, Code Review, Spring Framework, Spring Boot, HTML, JavaScript, CSS, jQuery</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Leadership -->
+            <section id="leadership" aria-labelledby="lead-title">
+                <h2 id="lead-title" class="mb-3">Leadership &amp; Service</h2>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="card p-4 h-100">
+                            <h3 class="h5 mb-1">Undergraduate Student Director, Secretary<span class="ms-2 badge text-bg-light">August 2024 — Present</span></h3>
+                            <div class="meta mb-2">Students Book Corporation (SBC)</div>
+                            <p class="mb-0">Promoted from Alternate (Co-Search Chair coordinating materials and candidate communications) to voting Undergraduate Student Director; currently serving as Secretary and joining the PR Committee.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card p-4 h-100">
+                            <h3 class="h5 mb-1">Industry Mentor Coordinator / Committee Chair <span class="ms-2 badge text-bg-light">Aug 2023 — Apr 2025</span></h3>
+                            <div class="meta mb-2">Society of Women Engineers (SWE)</div>
+                            <p class="mb-0">Led industry mentor program linking students with professionals; supported EWI and KSED events (registration, club coordination, on-site ops including setup).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card p-4 h-100">
+                            <h3 class="h5 mb-1">Mentorship Programs<span class="ms-2 badge text-bg-light">Aug 2023 — Apr 2025</span></h3>
+                            <div class="meta mb-2">Voiland Peer Network Mentorship · Team Mentoring Program (TMP) — Boeing-sponsored Mentee Scholarship</div>
+                            <p class="mb-0">Served as both mentee and mentor; supported peers’ transition to college. Nominated for and received the TMP Mentee Scholarship for active participation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="pt-4 pb-2 text-start">
+                <small class="muted d-block mb-2">
+                    © <span id="year"></span> Hyeonji Julia Lee
+                </small>
+                <a href="https://mapmyvisitors.com/web/1bz1n" title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?cl=ffffff&w=a&t=n&d=MzYXrqFcS1Uh5qRfmMTwguymUm9iyHU_86yvNcIT2U4&co=c6e2f1" /></a>
+            </footer>
+        </main>
+    </div>
+
+    <button id="toTop" class="btn btn-brand" aria-label="Back to top">▲</button>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // =====================
+        // ScrollSpy
+        // =====================
+        const SCROLL_OFFSET = 120;
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#sidenav',
+            offset: SCROLL_OFFSET
+        });
+
+        // Click → smooth scroll + immediate active state
+        const navLinks = Array.from(document.querySelectorAll('#sidenav .nav-link[href^="#"]'));
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const id = link.getAttribute('href');
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                const y = target.getBoundingClientRect().top + window.pageYOffset - (SCROLL_OFFSET - 10);
+                window.scrollTo({ top: y, behavior: 'smooth' });
+
+                const refresh = () => scrollSpy.refresh();
+                window.addEventListener('scrollend', refresh, { once: true });
+                setTimeout(refresh, 600);
+
+                history.replaceState(null, '', id);
+            });
+        });
+
+        document.addEventListener('activate.bs.scrollspy', () => {
+            const active = document.querySelector('#sidenav .nav-link.active');
+            if (!active) return;
+            navLinks.forEach(l => l.classList.toggle('active', l === active));
+        });
+        window.addEventListener('resize', () => scrollSpy.refresh());
+
+        // =====================
+        // Back to top button
+        // =====================
+        const toTop = document.getElementById('toTop');
+        window.addEventListener('scroll', () => {
+            toTop.style.display = window.scrollY > 500 ? 'inline-flex' : 'none';
+        });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // =====================
+        // Theme toggle (persist)
+        // =====================
+        const themeToggle = document.getElementById('themeToggle');
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        themeToggle?.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-bs-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-bs-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // =====================
+        // Footer year & updated label
+        // =====================
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const updated = document.getElementById('updated');
+        if (updated) {
+            const d = new Date();
+            const fmt = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            updated.textContent = fmt;
+        }
+
+        // =====================
+        // Research Interests chips → single panel
+        // =====================
+        (() => {
+            const panel = document.getElementById('ri-panel');
+            const chips = Array.from(document.querySelectorAll('.ri-chip'));
+            if (!panel || !chips.length) return;
+
+            const DATA = {
+                hib: {
+                    title: "Human Information Behavior",
+                    summary: "Explores how people find, evaluate, share, and reuse information across everyday, learning, and work contexts, with attention to credibility, time and attention constraints, and equitable access.",
+                    bullets: [
+                        "How do query formulation and credibility strategies change under real-world constraints?",
+                        "How do interfaces, social ties, and situational context shape seeking and sharing?",
+                        "Which interventions measurably increase access and autonomy for underserved users?"
+                    ],
+                    methods: ["Interviews", "Diary/Observation", "Surveys", "Log analysis", "Mixed methods"],
+                    keywords: ["information seeking", "credibility", "misinformation", "equity", "everyday life"]
+                },
+                aile: {
+                    title: "AI in Information Literacy Education",
+                    summary: "Designs AI-supported scaffolds and assessment that aid critical reading, source evaluation, and synthesis, integrating human verification and responsible use.",
+                    bullets: [
+                        "Prompt and rubric designs that transfer beyond a single tool",
+                        "Learner and teacher feedback that reduces hallucination risk",
+                        "Reliable assessment pipelines that demonstrate authentic learning gains"
+                    ],
+                    methods: ["Design-Based Research (DBR)", "Classroom studies", "A/B testing", "Rubric-based evaluation", "Learning analytics"],
+                    keywords: ["information literacy", "AI scaffolding", "assessment", "feedback", "ethics"]
+                },
+                ir: {
+                    title: "Information Retrieval Systems",
+                    summary: "Studies retrieval and interaction that deliver relevant, diverse, and timely information for real tasks, including transparent LLM-RAG.",
+                    bullets: [
+                        "Ranking that balances relevance and coverage for exploratory tasks",
+                        "Interfaces that support reformulation and learning during search",
+                        "Transparent systems with citations and uncertainty presentation"
+                    ],
+                    methods: ["Offline evaluation", "User studies", "Query and session log analysis", "Prototyping", "Online experiments"],
+                    keywords: ["interactive IR", "diversity", "ranking", "RAG", "explainability"]
+                },
+                ucss: {
+                    title: "User-Centered Systems & Services",
+                    summary: "End-to-end design of inclusive and accessible information systems and services, from needs assessment to deployment and impact evaluation.",
+                    bullets: [
+                        "Service blueprints grounded in real user journeys and constraints",
+                        "Identifying access gaps and prioritizing investments with multi-criteria decisions",
+                        "Outcome and impact metrics that go beyond raw usage"
+                    ],
+                    methods: ["Journey mapping", "Service blueprinting", "Prototyping and usability", "Accessibility review", "Surveys and interviews"],
+                    keywords: ["service design", "accessibility", "inclusion", "impact evaluation", "operations"]
+                }
+            };
+
+            function render(key) {
+                const d = DATA[key];
+                if (!d) return;
+                panel.innerHTML = `
+                  <div class="ri-subtle">Focus Area</div>
+                  <h3 class="h4">${d.title}</h3>
+                  <p>${d.summary}</p>
+                  <div class="ri-columns">
+                    <div>
+                      <div class="ri-subtle">Representative questions</div>
+                      <ul class="mb-2">${d.bullets.map(x => `<li>${x}</li>`).join('')}</ul>
+                    </div>
+                    <div>
+                      <div class="ri-subtle">Methods</div>
+                      <div class="kchips mb-2">${d.methods.map(m => `<span class="micro-pill">${m}</span>`).join('')}</div>
+                      <div class="ri-subtle">Keywords</div>
+                      <div class="kchips">${d.keywords.map(k => `<span class="micro-pill">${k}</span>`).join('')}</div>
+                    </div>
+                  </div>`;
+            }
+
+            function activate(btn) {
+                chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false') });
+                btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+                render(btn.dataset.key);
+            }
+
+            chips.forEach(btn => {
+                btn.addEventListener('mouseenter', () => activate(btn));
+                btn.addEventListener('focus', () => activate(btn));
+                btn.addEventListener('click', () => activate(btn));
+                btn.addEventListener('touchstart', () => activate(btn), { passive: true });
+            });
+
+            activate(chips[0]);
+        })();
+    </script>
+</body>
+</html>
